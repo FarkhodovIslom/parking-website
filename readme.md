@@ -8,6 +8,7 @@ User's page for see all parked cars
 Admin page for adding new cars 
 
 File structure here:
+```
 parking-website/
 ├── node_modules/
 ├── public/
@@ -28,3 +29,4 @@ parking-website/
 ├── server.js
 ├── package.json
 └── README.md
+```

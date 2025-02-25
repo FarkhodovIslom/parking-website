@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "number": "01A123AB",
+    "owner": "Aliyev Hasan",
+    "model": "Chevrolet Malibu",
+    "parkedAt": "2025-02-25T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "number": "10B456CD",
+    "owner": "Nazarov Diyor",
+    "model": "Hyundai Sonata",
+    "parkedAt": "2025-02-25T11:30:00Z"
+  }
+]

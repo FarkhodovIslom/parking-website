@@ -4,6 +4,7 @@ const controller = require('../controller/controller');
 
 router.get("/", controller.index);
 router.get("/cars", controller.getCars);
+router.post("/", controller.postNewCar)
 
 console.log(controller);
 module.exports = router;

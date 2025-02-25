@@ -5,7 +5,6 @@ const filePath = path.join(__dirname, "../data/parkedCars.json");
 const data = fs.readFileSync(filePath, "utf8");
 const cars = JSON.parse(data);
 
-console.log(cars);
 
 const pageController = {
     index: (req, res) => {
@@ -13,6 +12,16 @@ const pageController = {
     },
     getCars: (req, res) => {
         res.render('carList', {cars});  
+    }, 
+    postNewCar: (req, res) => {
+        const newCar = {
+            id: cars.length + 1,
+            number: req.body.car_number,
+            owner: req.body.car_number,
+            parkedAt: 2025,
+        }
+        cars.push(newCar);
+        fs.writeFileSync(filePath, JSON.stringify(cars));
     }
 }
 

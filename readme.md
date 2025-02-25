@@ -8,7 +8,8 @@ User's page for see all parked cars
 Admin page for adding new cars 
 
 File structure here:
-```parking-website/
+```
+parking-website/
 ├── node_modules/
 ├── public/
 │   ├── css/
@@ -27,4 +28,5 @@ File structure here:
 │   └── router.js
 ├── server.js
 ├── package.json
-└── README.md```
+└── README.md
+```

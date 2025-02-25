@@ -11,18 +11,24 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Parking App</title>
 </head>
-<body>
+<body class="bg-dark">
     <center class="text-light">
-        <h1> Parking App</h1>
-        <form action="/parking" method="post">
-            <label for="car_number">Car Number:</label>
-            <input type="text" id="car_number" name="car_number"><br><br>
-            <label for="car_model">Car model:</label>
-            <input type="text" id="car_model" name="car_model"><br><br>
-            <input type="submit" class="btn btn-outline-warning" id="" value="Park">
-        </form>
-        <br><br>
-        <a href="/cars" class="view-car btn btn-outline-warning" id="view">View parked cars</a>
+        <div class="container">
+            <h1> Parking App</h1>
+            <div class="row justify-content-center">
+                <form action="/parking" method="post" class="col-md-5">
+                    <label class="form-label" for="car_number">Car Number:</label>
+                    <input type="text" class="form-control bg-dark border-warning text-light" id="car_number" name="car_number"><br><br>
+                    <label class="form-label" for="car_model">Car Owner:</label>
+                    <input type="text" class="form-control bg-dark border-warning text-light" id="car_owner" name="car_owner"><br><br>
+                    <label class="form-label" for="car_Model">Car Model:</label>
+                    <input type="text" class="form-control bg-dark border-warning text-light" id="car_model" name="car_odel"><br><br>
+                    <input type="submit" class="btn btn-outline-warning" id="" value="Park">
+                </form>
+            </div>
+            <br>
+            <a href="/cars" class="view-car btn btn-outline-warning" id="view">View parked cars</a>
+        </div>
     </center>
 </body>
 </html>

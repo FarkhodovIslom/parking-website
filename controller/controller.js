@@ -17,11 +17,13 @@ const pageController = {
         const newCar = {
             id: cars.length + 1,
             number: req.body.car_number,
-            owner: req.body.car_number,
+            owner: req.body.car_owner,
+            model: req.body.car_model,
             parkedAt: 2025,
         }
         cars.push(newCar);
         fs.writeFileSync(filePath, JSON.stringify(cars));
+        res.redirect('/cars')
     }
 }
 

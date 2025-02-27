@@ -34,7 +34,8 @@ const pageController = {
                 number: req.body.car_number,
                 owner: req.body.car_owner, 
                 model: req.body.car_model,
-                parkedAt: 2025,
+                parkedAt: new Date().toISOString(),
+
             }
             cars.push(newCar);
             fs.writeFileSync(filePath, JSON.stringify(cars));

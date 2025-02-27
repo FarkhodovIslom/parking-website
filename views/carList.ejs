@@ -14,7 +14,8 @@
 <body class="bg-dark">
     <center>
         <div class="container">
-            <h1 class="text-warning">Parked Cars</h1> <br>
+            <h1 class="text-warning">Parked Cars</h1> 
+            
             <table class="table table-dark table-bordered border-warning table-hover">
                 <tr>
                     <th>Car Id</th>
@@ -22,6 +23,7 @@
                     <th>Car Owner</th>
                     <th>Car Model</th>
                     <th>Parked At</th>
+                    <th>Action</th>
                 </tr>
                 <% for (let index in cars) { %>
                 <tr>
@@ -30,13 +32,41 @@
                     <td><%= cars[index].owner %></td>
                     <td><%= cars[index].model %></td>
                     <td><%= cars[index].parkedAt %></td>
+                    <td>
+                        <button class="btn btn-danger btn-sm delete_car" data-id="<%= cars[index].id %>">Delete</button>
+                    </td>
                 </tr>
-                <% } %>
+                <% } %> 
+
+                <!-- Delete zapros uchun function -->
+                 <script>
+                    function deleteCar(id) {
+                        if ( confirm("Are you sure to delete this car?") ) {
+                            fetch(`/cars/${id}`, {
+                                method: "DELETE"
+                            }).then(res => {
+                                if (res.ok) {
+                                    window.location.reload();
+                                } else {
+                                    alert("O'chirishda xatolik yuz berdi!")
+                                }
+                            }).catch(err => {
+                                console.error("Error:", err);
+                            });
+                        }
+                    }
+
+                    document.querySelectorAll(".delete_car").forEach(btn => {
+                        btn.addEventListener("click", function() {
+                            const cardId = this.dataset.id;
+                            deleteCar(cardId);
+                        });
+                    });
+                 </script>
             </table>
 
             <a href="/" class="btn btn-outline-warning">Go back</a>
         </div>
-
     </center>
 </body>
 </html>
